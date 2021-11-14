@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="manifest.json">
+	<title>Sliding Text</title>
+	<link rel="stylesheet" href="lib/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="lib/css/pickr.classic.min.css">
+	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+			<img src="img/logo.svg">
+			<span>Sliding Text</span>
+		</div>
+	</header>
+
+	<form class="container" action="text.html" method="GET">
+		<section class="main">
+			<main>
+				<div class="explanation">Digite o texto</div>
+				<textarea type="text" name="text" class="text" required>Olá mundo!</textarea>
+			</main>
+			<footer>
+				<div class="selectDirection chipsGroup">
+					<div class="title">Direção:</div>
+					<label class="chip direction">
+						<input type="radio" name="direction" value="-1">
+						<div class="label"><i class="mdi mdi-arrow-left"></i></div>
+					</label>
+					<label class="chip direction">
+						<input type="radio" name="direction" value="1" checked>
+						<div class="label"><i class="mdi mdi-arrow-right"></i></div>
+					</label>
+				</div>
+
+				<div class="advancedOptions">
+					<div>Opções</div>
+					<i class="mdi mdi-chevron-down"></i>
+				</div>
+
+				<div class="start">
+					<button type="submit">
+						<i class="mdi mdi-play"></i>
+						<span>Iniciar</span>
+					</button>
+				</div>
+			</footer>
+		</section>
+
+		<section class="advanced">
+			<header>
+				<div class="title">Opções</div>
+			</header>
+
+			<main>
+				<label class="option">
+					<input type="checkbox" name="alternate">
+					<div class="label">Alternar direção</div>
+				</label>
+
+				<div class="optionsTitle">Easing</div>
+
+				<label class="option">
+					<input type="radio" name="easing" value="linear" checked>
+					<div class="label">Linear</div>
+				</label>
+
+				<label class="option">
+					<input type="radio" name="easing" value="ease">
+					<div class="label">Ease</div>
+				</label>
+
+				<label class="option">
+					<input type="radio" name="easing" value="ease-in">
+					<div class="label">Ease in</div>
+				</label>
+
+				<label class="option">
+					<input type="radio" name="easing" value="ease-out">
+					<div class="label">Ease out</div>
+				</label>
+
+				<label class="option">
+					<input type="radio" name="easing" value="ease-in-out">
+					<div class="label">Ease in out</div>
+				</label>
+
+				<label class="option text">
+					<input type="radio" name="easing" value="custom">
+					<div class="label">
+						<div class="text">Custom</div>
+						<input type="text" name="customEasing">
+					</div>
+				</label>
+
+				<label class="option range">
+					<div class="label">
+						<div class="text">Duração</div>
+						<input type="range" name="duration" min="0.1" max="10" step="0.1" value="1">
+					</div>
+				</label>
+
+				<label class="option text">
+					<div class="label">
+						<div class="text">Tamanho da fonte</div>
+						<input type="number" name="fontSize" min="0" value="20">
+						<div class="suffix">vh</div>
+					</div>
+				</label>
+
+				<label class="option text">
+					<div class="label">
+						<div class="text">Padding</div>
+						<input type="number" name="padding" value="100">
+						<div class="suffix">vh</div>
+					</div>
+				</label>
+
+				<label class="option color">
+					<div class="label">
+						<div class="text">Cor do fundo</div>
+						<div class="pickr-background"></div>
+					</div>
+					<input type="hidden" name="background" value="#000">
+				</label>
+
+				<label class="option color">
+					<div class="label">
+						<div class="text">Cor do texto</div>
+						<div class="pickr-color"></div>
+					</div>
+					<input type="hidden" name="color" value="#FFF">
+				</label>
+
+				<label class="option range">
+					<div class="label">
+						<div class="text">Opacidade</div>
+						<input type="range" name="opacity" min="0" max="1" step="0.01" value="1">
+					</div>
+				</label>
+
+				<button type="button" class="resetSettings" onclick="localStorage.clear();loading();location.reload()">
+					Redefinir configurações
+				</button>
+			</main>
+		</section>
+
+		<div class="start floating hidden">
+			<button type="submit">
+				<i class="mdi mdi-play"></i>
+			</button>
+		</div>
+	</form>
+
+	<div class="loadingScreen">
+		<div class="text">Aguarde</div>
+		<i class="mdi mdi-timer-sand"></i>
+	</div>
+
+	<script src="lib/js/pickr.es5.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

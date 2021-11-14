@@ -1,0 +1,42 @@
+body {
+	--start: 0px;
+	--end: 100px;
+	--anim-time: 2s;
+	--anim-easing: ease-in-out;
+	--anim-dir: normal;
+	background: black;
+	color: rgba(255, 255, 255, 0.5);
+	font-family: sans-serif;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+}
+
+.container {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+.content {
+	animation: scroll var(--anim-time) var(--anim-easing) infinite var(--anim-dir);
+	display: block;
+	position: relative;
+	white-space: nowrap;
+}
+
+.text {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+@keyframes scroll {
+	from {
+		left: var(--start);
+	}
+	to {
+		left: var(--end);
+	}
+}
