@@ -35,7 +35,7 @@ function setup() {
 	options.container.style.opacity = options.opacity
 	if (options.direction === 1) {
 		document.body.style.setProperty('--start', `calc(0px - ${options.padding / 2}vw)`)
-		document.body.style.setProperty('--end', `calc(${-options.maxScroll}px - ${options.padding / 2}vw`)
+		document.body.style.setProperty('--end', `calc(${-options.maxScroll}px - ${options.padding / 2}vw)`)
 	} else if (options.direction === -1) {
 		document.body.style.setProperty('--start', -options.maxScroll + 'px')
 		document.body.style.setProperty('--end', '0px')
