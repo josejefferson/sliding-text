@@ -1,3 +1,5 @@
+document.addEventListener('dblclick', () => location.href = './')
+
 const $container = document.querySelector('.container')
 const $content = document.querySelector('.content')
 
